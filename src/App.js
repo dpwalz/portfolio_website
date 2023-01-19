@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from './Components/Header';
 import Home from './Components/Home';
 import Projects from './Components/Projects';
@@ -9,6 +9,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {
+
+  useEffect(() => {
+    document.title = "Derek Walz";  
+  }, []);
+
   return (
     <Router>
       <div  >

@@ -21,8 +21,12 @@ export default function Home() {
                             <Card.Subtitle>Hi There!</Card.Subtitle>
                             <Card.Text>
                                 My name is <b>Derek Walz</b>. I am currently pursuing a Master's Degree in Software Engineering
-                                at the University of Calgary. I love learning and applying new skills and I am excited to 
+                                at the University of Calgary graduating in April 2023. I love learning and applying new skills and I am excited to 
                                 transition into a new career path. 
+                            </Card.Text>
+                            <Card.Text>
+                                In the past year I have been developing skills in Java, Python, C++, Javascript and have been using React, NodeJS, and Spring frameworks to 
+                                build a foundational programming base to help me move forward. Click on the button below to check out some of my recent projects. 
                             </Card.Text>
                             <Card.Text>
                                 I have almost a decade of Chemical engineering experience working in the oil and gas industry as both a 
