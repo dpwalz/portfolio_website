@@ -8,14 +8,10 @@ import {Button,
         Typography} from "@mui/material";
 import StudentRegistrationModal from "./StudentRegistrationModal";
 
-const style = {
-    minHeight: 389
-}
-
 const title = "Student Registration System";
 const subheader = "Fullstack Web App";
 
-export default function StudentRegistration() {
+export default function StudentRegistration(props) {
 
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
@@ -23,7 +19,7 @@ export default function StudentRegistration() {
 
     return (
     <React.Fragment>
-        <Card sx={style}>
+        <Card sx={props.paperstyle}>
             <CardHeader title={title} subheader={subheader} />
             <CardContent>
                 <Typography variant="subtitle2" color="text.primary">About:</Typography>
@@ -49,7 +45,7 @@ export default function StudentRegistration() {
         element="Card"
         >
             <div>
-                <StudentRegistrationModal title={title} subheader={subheader}/>
+                <StudentRegistrationModal modalstyle={props.modalstyle} title={title} subheader={subheader}/>
             </div>
             
         </Modal>

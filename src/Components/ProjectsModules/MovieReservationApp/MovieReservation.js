@@ -8,14 +8,10 @@ import {Button,
         Typography} from "@mui/material";
 import MovieReservationModal from "./MovieReservationModal.js";
 
-const style = {
-    minHeight: 389
-}
-
 const title = "Movie Reservation App";
 const subheader = "Fullstack Web App";
 
-export default function MovieReservation() {
+export default function MovieReservation(props) {
 
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
@@ -23,7 +19,7 @@ export default function MovieReservation() {
 
     return (
     <React.Fragment>
-        <Card sx={style}>
+        <Card sx={props.paperstyle}>
             <CardHeader title={title} subheader={subheader} />
             <CardContent>
                 <Typography variant="subtitle2" color="text.primary">About:</Typography>
@@ -49,7 +45,7 @@ export default function MovieReservation() {
         element="Card"
         >
             <div>
-                <MovieReservationModal title={title} subheader={subheader}/>
+                <MovieReservationModal modalstyle={props.modalstyle} title={title} subheader={subheader}/>
             </div>
             
         </Modal>

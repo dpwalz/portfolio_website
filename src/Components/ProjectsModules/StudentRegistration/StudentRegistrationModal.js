@@ -6,24 +6,10 @@ import { Card,
          Typography } from "@mui/material";
 import GitHubIcon from '@mui/icons-material/GitHub';
 
-const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    minWidth: 400,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-    maxHeight: '80%', 
-    overflow: 'auto'
-  };
-
 export default function StudentRegistrationModal(props) {
 
     return (
-        <Card sx={style}>
+        <Card sx={props.modalstyle}>
             <CardHeader title={props.title} subheader={props.subheader}/>
             <CardContent>
                 <Typography variant="subtitle1">

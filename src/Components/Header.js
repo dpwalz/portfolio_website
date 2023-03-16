@@ -26,7 +26,7 @@ export default function Header() {
     };
 
     return (
-        <AppBar position="static" sx={{bgcolor: '#CFD2CF'}}>
+        <AppBar position="sticky" sx={{bgcolor: '#CFD2CF'}}>
         <Container maxWidth="false">
         <Toolbar disableGutters>
             <Typography

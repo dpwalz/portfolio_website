@@ -8,14 +8,10 @@ import {Button,
         Typography} from "@mui/material";
 import EogMouseControlModal from "./EogMouseControlModal";
 
-const style = {
-    minHeight: 389
-}
-
 const title = "NatHacks 2022 - EOG Mouse Control";
 const subheader = "Hackathon Project"
 
-export default function EogMouseControl() {
+export default function EogMouseControl(props) {
 
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
@@ -23,7 +19,7 @@ export default function EogMouseControl() {
 
     return (
     <React.Fragment>
-        <Card sx={style}>
+        <Card sx={props.paperstyle}>
             <CardHeader title={title} subheader={subheader} />
             <CardContent>
                 <Typography variant="subtitle2" color="text.primary">About:</Typography>
@@ -48,7 +44,7 @@ export default function EogMouseControl() {
         element="Card"
         >
             <div>
-                <EogMouseControlModal title={title} subheader={subheader} />
+                <EogMouseControlModal modalstyle={props.modalstyle} title={title} subheader={subheader} />
             </div>
             
         </Modal>

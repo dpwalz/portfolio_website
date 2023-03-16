@@ -8,14 +8,10 @@ import {Button,
         Typography} from "@mui/material";
 import FindMyMentorModal from "./FindMyMentorModal";
 
-const style = {
-    minHeight: 389
-}
-
 const title = "2023 UofC Nurses/Software Hackathon - FindMyMentor";
 const subheader = "Hackathon - Fullstack Web App";
 
-export default function FindMyMentor() {
+export default function FindMyMentor(props) {
 
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
@@ -23,7 +19,7 @@ export default function FindMyMentor() {
 
     return (
     <React.Fragment>
-        <Card sx={style}>
+        <Card sx={props.paperstyle}>
             <CardHeader title={title} subheader={subheader} />
             <CardContent>
                 <Typography variant="subtitle2" color="text.primary">About:</Typography>
@@ -49,7 +45,7 @@ export default function FindMyMentor() {
         element="Card"
         >
             <div>
-                <FindMyMentorModal title={title} subheader={subheader} />
+                <FindMyMentorModal modalstyle={props.modalstyle} title={title} subheader={subheader} />
             </div>  
         </Modal>
     </React.Fragment>    

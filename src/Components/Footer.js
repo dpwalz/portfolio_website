@@ -28,7 +28,7 @@ export default function Footer() {
     };
 
     return (
-        <Paper square sx={{ bgcolor: '#CFD2CF', height: '150px'}}>
+        <Paper square sx={{ bgcolor: '#CFD2CF', height: '150px', position: 'sticky'}}>
           <Grid container 
                 rowSpacing={1} 
                 direction="column"
