@@ -1,48 +1,97 @@
 import React from "react";
-import { Card, Container, Col, Row, Image, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import imageUrl from "../Resources/profile_pic.jpg";
+import {Card, 
+        CardMedia, 
+        Container, 
+        Grid, 
+        Box, 
+        CardActions, 
+        Button, 
+        Paper, 
+        CardContent, 
+        Typography } from "@mui/material";
+
+
 
 export default function Home() {
 
     return (
-        <Container /*fluid={true}*/ className="d-flex flex-row ">
-            <Row xs={1} lg={2} >
-                <Col>
-                    <Card style={{marginTop: "5rem", height: "100%", backgroundColor: "#99999900", border: "none"}}>
-                        <Image thumbnail={true} style={{maxWidth: "fit-content", height:"90%"}} fluid={true} rounded={true} src={imageUrl}/>
-                    </Card>
-                </Col>
-                <Col >
-                    <Card style={{marginTop:"5rem", height: "90%"}}>
-                        {/* <Card.Img variant="top" src={imageUrl} /> */}
-                        <Card.Header>About</Card.Header>
-                        <Card.Body>
-                            <Card.Subtitle>Hi There!</Card.Subtitle>
-                            <Card.Text>
-                                My name is <b>Derek Walz</b>. I am currently pursuing a Master's Degree in Software Engineering
-                                at the University of Calgary graduating in April 2023. I love learning and applying new skills and I am excited to 
-                                transition into a new career path. 
-                            </Card.Text>
-                            <Card.Text>
-                                In the past year I have been developing skills in Java, Python, C++, Javascript and have been using React, NodeJS, and Spring frameworks to 
-                                build a foundational programming base to help me move forward. Click on the button below to check out some of my recent projects. 
-                            </Card.Text>
-                            <Card.Text>
-                                I have almost a decade of Chemical engineering experience working in the oil and gas industry as both a 
-                                process and operations engineer. This experience allowed me to develop skills working with diverse 
-                                teams and applying technical knowledge to troubleshoot every day issues.
-                            </Card.Text>
-                            <div className="d-grid gap-2">
-                                <Button variant="outline-primary" as={Link} size="lg" to="/projects">Projects</Button>{'   '}
-                                <Button variant="outline-primary" as={Link} size="lg" to="/contact">Contact Info</Button>{'   '}
-                            </div>
-                            
-                        </Card.Body>
-                    </Card>
-                </Col>
-            </Row>
-        
-        </Container>   
+      <Paper square sx={{ bgcolor: '#F5EDDC', minHeight: 'calc(100vh - 211px)'}}>
+        <Container component="section" sx={{pt: 10, pb: 5, display: 'flex', bgcolor: '#F5EDDC' }}>
+          <Grid container>
+            <Grid item xs={12} md={6} sx={{ zIndex: 1 }}>
+              <Card sx={{
+                justifyContent: 'center',
+                py: 8,
+                px: 3,
+              }}>
+                <CardMedia 
+                  sx={{ display: { md: 'none'}}}
+                  component="img"
+                  height="200"
+                  image={imageUrl}/>
+                  <CardContent>
+                    <Typography paragraph variant="body1" color="text.secondary">
+                    My name is <b>Derek Walz</b>. I am currently pursuing a Master's Degree in Software Engineering
+                        at the University of Calgary graduating in April 2023. I love learning and applying new skills and I am excited to 
+                    transition into a new career path.
+                    </Typography>
+                    <Typography paragraph variant="body1" color="text.secondary">
+                        In the past year I have been developing skills in Java, Python, C++, Javascript and have been using React, Angular, NodeJS, and Spring frameworks to 
+                        build a foundational programming base to help me move forward. Click on the button below to check out some of my recent projects. 
+                    </Typography>
+                    <Typography paragraph variant="body1" color="text.secondary">
+                        I have almost a decade of Chemical engineering experience working in the oil and gas industry as both a 
+                    process and operations engineer. This experience allowed me to develop skills working with diverse 
+                        teams and applying technical knowledge to troubleshoot every day issues.
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                      <Button variant="outlined" 
+                              color="inherit" 
+                              component={RouterLink} 
+                              size="lg" 
+                              to={"/projects"}
+                      >
+                        Projects
+                      </Button>
+                  </CardActions>
+              </Card>      
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              sx={{ display: { md: 'block', xs: 'none' }, position: 'relative'}}
+            >
+              <Box
+                sx={{
+                  position: 'absolute',
+                  top: -67,
+                  left: -67,
+                  right: 0,
+                  bottom: 0,
+                  width: '100%',
+                }}
+              />
+              <Box
+                component="img"
+                src={imageUrl}
+                alt="Derek Profile Picture"
+                sx={{
+                  position: 'absolute',
+                  top: -28,
+                  left: -28,
+                  right: 0,
+                  bottom: 0,
+                  width: '100%',
+                  maxWidth: 600,
+                }}
+              />
+            </Grid>
+          </Grid>
+        </Container>
+      </Paper>  
     );
 }
